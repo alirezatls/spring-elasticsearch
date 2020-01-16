@@ -5,10 +5,11 @@ import com.sample.springelastic.domain.Article;
 public class ArticleMapper {
 
     public static Article map(ArticleRequest request) {
-        return Article.builder()
-                .name(request.getName())
-                .author(request.getAuthor())
-                .title(request.getTitle())
-                .build();
+        Article article = new Article();
+        article.setName(request.getName());
+        article.setTitle(request.getTitle());
+        article.setAuthor(request.getAuthor());
+        article.setPrice(request.getPrice());
+        return article;
     }
 }
